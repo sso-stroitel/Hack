@@ -1,0 +1,90 @@
+@import 'assets/variables.scss';
+
+.employee-list {
+  height: 100%;
+  &__main {
+    height: 100%;
+    display: flex;
+  }
+  &__body {
+    width: 100%;
+    padding: 30px;
+    background-color: #f7f7f7;
+    height: 100%;
+  }
+  &__table {
+    padding-right: 10px;
+    height: 575px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 2px grey;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $btn-color;
+      border-radius: 10px;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    line-height: 1.2;
+    font-size: 14px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    background-color: #fff;
+    transition: box-shadow .2s ease-in;
+    &:hover {
+      box-shadow: -1px -1px 1px 1px rgba(0,0,0,.3);
+    }
+
+    &.is-red {
+      background-color: rgba(227,6,19, .2);
+    }
+
+    &.is-yellow {
+      background-color: rgba(255,238,73, .2);
+    }
+    &.is-head {
+      background-color: transparent;
+      box-shadow: none;
+      text-transform: uppercase;
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    &-id {
+      width: 65px;
+    }
+
+    &-name {
+      width: 310px
+    }
+
+    &-department {
+      width: 150px;
+    }
+
+    &-spec {
+      width: 174px;
+    }
+
+    &-time {
+      width: 90px;
+    }
+
+    &-firing {
+      width: 90px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.platform {
+  height: 100%;
+
+  &__main {
+    height: 100%;
+    display: flex;
+  }
+
+  &__body {
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    background-color: #f7f7f7;
+  }
+}

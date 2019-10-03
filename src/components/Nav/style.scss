@@ -1,0 +1,32 @@
+.navbar__item {
+  position: relative;
+  overflow: hidden;
+  height: 50px;
+  width: 100%;
+  color: rgba(0,0,0,.6);
+  font-size: 20px;
+  cursor: pointer;
+  transition: color .3s ease-in;
+  line-height: 50px;
+  padding-left: 50px;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: #E30613;
+    left: 0;
+    will-change: transform;
+    transition: transform .2s ease-in;
+    transform: translateX(-10px);
+  }
+  &.is-active {
+    color: #E30613;
+    &:after {
+      transform: translateX(0);
+    }
+  }
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

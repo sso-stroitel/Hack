@@ -1,0 +1,271 @@
+@import 'assets/variables';
+
+.projects {
+
+  &__employee {
+    padding: 0 30px;
+
+    &-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: url('/static/user.png') no-repeat center;
+      background-size: cover;
+      margin: 0 20px 15px;
+    }
+
+    &-name {
+      font-size: 18px;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    &-spec {
+      font-size: 13px;
+      font-weight: 300;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow-y: scroll;
+    height: 525px;
+    transition: height .3s ease-in;
+    will-change: height;
+
+    &-wrapper {
+      position: relative;
+      padding: 10px 10px 0;
+      margin-bottom: 30px;
+    }
+
+    &.is-hided {
+      height: 220px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 2px grey;
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $btn-color;
+      border-radius: 10px;
+    }
+  }
+
+  &__card {
+    position: relative;
+    width: 210px;
+    height: 210px;
+    margin-right: 20px;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 20px 10px 10px;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.1);
+    transition: box-shadow .2s ease-in;
+
+    &:not(:nth-last-child(-n+3)) {
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    &.active {
+      box-shadow: inset 0 0 10px 5px #E30613;
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: rgba(0, 0, 0, .9);
+    }
+
+    &-command {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(0, 0, 0, .7);
+      margin-bottom: 20px;
+    }
+
+    &-meta {
+      padding: 0 20px 20px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-time {
+      display: flex;
+      align-items: center;
+      &-icon {
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+        background: url('/static/clock.svg') no-repeat center;
+        background-size: cover;
+      }
+      &-value {
+        color: #E30613;
+      }
+    }
+
+    &-grade {
+      & span {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-width: 0 3px 3px 0;
+        border-style: solid;
+        border-color: #E30613;
+        transform: rotate(225deg);
+      }
+    }
+
+    &-cost {
+      display: flex;
+      align-items: center;
+      &-icon {
+        width: 20px;
+        margin-right: 5px;
+        height: 20px;
+        background: url('/static/money.svg') no-repeat center;
+        background-size: cover;
+      }
+      &-value {
+        color: #E30613;
+      }
+    }
+  }
+
+  &__detail {
+    position: relative;
+    display: flex;
+    height: 320px;
+    width: calc(100% - 20px);
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    opacity: 1;
+    transition: opacity .2s ease;
+
+    &.hidden {
+      opacity: 0;
+    }
+  }
+
+  &__col {
+    flex-basis: 50%;
+    padding-right: 20px;
+    & p {
+      margin-bottom: 2px;
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(0,0,0,.5)
+    }
+  }
+
+  &__photos {
+    display: flex;
+  }
+
+  &__photo {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-size: cover;
+  }
+
+  &__title,
+  &__description,
+  &__team,
+  &__photos,
+  &__salary,
+  &__stack {
+    margin-bottom: 25px;
+  }
+
+  &__title,
+  &__description,
+  &__team,
+  &__salary {
+    font-size: 18px;
+    color: rgba(0,0,0,.9);
+  }
+
+  &__comparison {
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  &__btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 15px;
+    right: 15px;
+    width: 130px;
+    height: 40px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    background-color: #E30613;
+    opacity: .8;
+    transition: opacity .2s ease-in;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.hide-btn {
+  position: absolute;
+  width: 60px;
+  height: 25px;
+  bottom: 0;
+  right: 50%;
+  transform: translate(28%, 0);
+  background-color: $btn-color;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 10px;
+    top: 2px;
+    height: 10px;
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    border-color: #fff;
+    transform: translateX(-50%) rotate(45deg);
+    transition: left .2s ease-in, border-color .2s ease-in;
+  }
+
+  &.open:before {
+    transform: translateX(-50%) rotate(225deg);
+    top: 8px;
+  }
+}
